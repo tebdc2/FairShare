@@ -1,0 +1,582 @@
+<html lang="pt-BR"><head>
+
+<script class="injected-ffc2e83d85">
+(function(){'use strict';function q(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}function t(b){var c=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(c)return c.call(b);if(typeof b.length=="number")return{next:q(b)};throw Error(String(b)+" is not an iterable or ArrayLike");}var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,c,g){if(b==Array.prototype||b==Object.prototype)return b;b[c]=g.value;return b};
+function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var c=0;c<b.length;++c){var g=b[c];if(g&&g.Math==Math)return g}throw Error("Cannot find global object");}var w=v(this);function x(b,c){if(c)a:{var g=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var l=b[h];if(!(l in g))break a;g=g[l]}b=b[b.length-1];h=g[b];c=c(h);c!=h&&c!=null&&u(g,b,{configurable:!0,writable:!0,value:c})}}
+function y(){this.j=!1;this.g=null;this.u=void 0;this.h=1;this.v=this.l=0;this.i=null}function z(b){if(b.j)throw new TypeError("Generator is already running");b.j=!0}y.prototype.o=function(b){this.u=b};function A(b,c){b.i={I:c,J:!0};b.h=b.l||b.v}y.prototype.return=function(b){this.i={return:b};this.h=this.v};function B(b){this.g=new y;this.h=b}function E(b,c){z(b.g);var g=b.g.g;if(g)return F(b,"return"in g?g["return"]:function(h){return{value:h,done:!0}},c,b.g.return);b.g.return(c);return G(b)}
+function F(b,c,g,h){try{var l=c.call(b.g.g,g);if(!(l instanceof Object))throw new TypeError("Iterator result "+l+" is not an object");if(!l.done)return b.g.j=!1,l;var m=l.value}catch(f){return b.g.g=null,A(b.g,f),G(b)}b.g.g=null;h.call(b.g,m);return G(b)}function G(b){for(;b.g.h;)try{var c=b.h(b.g);if(c)return b.g.j=!1,{value:c.value,done:!1}}catch(g){b.g.u=void 0,A(b.g,g)}b.g.j=!1;if(b.g.i){c=b.g.i;b.g.i=null;if(c.J)throw c.I;return{value:c.return,done:!0}}return{value:void 0,done:!0}}
+function H(b){this.next=function(c){z(b.g);b.g.g?c=F(b,b.g.g.next,c,b.g.o):(b.g.o(c),c=G(b));return c};this.throw=function(c){z(b.g);b.g.g?c=F(b,b.g.g["throw"],c,b.g.o):(A(b.g,c),c=G(b));return c};this.return=function(c){return E(b,c)};this[Symbol.iterator]=function(){return this}}function I(b){function c(h){return b.next(h)}function g(h){return b.throw(h)}return new Promise(function(h,l){function m(f){f.done?h(f.value):Promise.resolve(f.value).then(c,g).then(m,l)}m(b.next())})}
+x("Symbol",function(b){function c(m){if(this instanceof c)throw new TypeError("Symbol is not a constructor");return new g(h+(m||"")+"_"+l++,m)}function g(m,f){this.g=m;u(this,"description",{configurable:!0,writable:!0,value:f})}if(b)return b;g.prototype.toString=function(){return this.g};var h="jscomp_symbol_"+(Math.random()*1E9>>>0)+"_",l=0;return c});
+x("Symbol.iterator",function(b){if(b)return b;b=Symbol("Symbol.iterator");u(Array.prototype,b,{configurable:!0,writable:!0,value:function(){return J(q(this))}});return b});function J(b){b={next:b};b[Symbol.iterator]=function(){return this};return b}
+x("Promise",function(b){function c(f){this.h=0;this.i=void 0;this.g=[];this.u=!1;var a=this.j();try{f(a.resolve,a.reject)}catch(d){a.reject(d)}}function g(){this.g=null}function h(f){return f instanceof c?f:new c(function(a){a(f)})}if(b)return b;g.prototype.h=function(f){if(this.g==null){this.g=[];var a=this;this.i(function(){a.l()})}this.g.push(f)};var l=w.setTimeout;g.prototype.i=function(f){l(f,0)};g.prototype.l=function(){for(;this.g&&this.g.length;){var f=this.g;this.g=[];for(var a=0;a<f.length;++a){var d=
+f[a];f[a]=null;try{d()}catch(e){this.j(e)}}}this.g=null};g.prototype.j=function(f){this.i(function(){throw f;})};c.prototype.j=function(){function f(e){return function(k){d||(d=!0,e.call(a,k))}}var a=this,d=!1;return{resolve:f(this.D),reject:f(this.l)}};c.prototype.D=function(f){if(f===this)this.l(new TypeError("A Promise cannot resolve to itself"));else if(f instanceof c)this.G(f);else{a:switch(typeof f){case "object":var a=f!=null;break a;case "function":a=!0;break a;default:a=!1}a?this.C(f):this.o(f)}};
+c.prototype.C=function(f){var a=void 0;try{a=f.then}catch(d){this.l(d);return}typeof a=="function"?this.H(a,f):this.o(f)};c.prototype.l=function(f){this.v(2,f)};c.prototype.o=function(f){this.v(1,f)};c.prototype.v=function(f,a){if(this.h!=0)throw Error("Cannot settle("+f+", "+a+"): Promise already settled in state"+this.h);this.h=f;this.i=a;this.h===2&&this.F();this.K()};c.prototype.F=function(){var f=this;l(function(){if(f.B()){var a=w.console;typeof a!=="undefined"&&a.error(f.i)}},1)};c.prototype.B=
+function(){if(this.u)return!1;var f=w.CustomEvent,a=w.Event,d=w.dispatchEvent;if(typeof d==="undefined")return!0;typeof f==="function"?f=new f("unhandledrejection",{cancelable:!0}):typeof a==="function"?f=new a("unhandledrejection",{cancelable:!0}):(f=w.document.createEvent("CustomEvent"),f.initCustomEvent("unhandledrejection",!1,!0,f));f.promise=this;f.reason=this.i;return d(f)};c.prototype.K=function(){if(this.g!=null){for(var f=0;f<this.g.length;++f)m.h(this.g[f]);this.g=null}};var m=new g;c.prototype.G=
+function(f){var a=this.j();f.A(a.resolve,a.reject)};c.prototype.H=function(f,a){var d=this.j();try{f.call(a,d.resolve,d.reject)}catch(e){d.reject(e)}};c.prototype.then=function(f,a){function d(n,r){return typeof n=="function"?function(C){try{e(n(C))}catch(D){k(D)}}:r}var e,k,p=new c(function(n,r){e=n;k=r});this.A(d(f,e),d(a,k));return p};c.prototype.catch=function(f){return this.then(void 0,f)};c.prototype.A=function(f,a){function d(){switch(e.h){case 1:f(e.i);break;case 2:a(e.i);break;default:throw Error("Unexpected state: "+
+e.h);}}var e=this;this.g==null?m.h(d):this.g.push(d);this.u=!0};c.resolve=h;c.reject=function(f){return new c(function(a,d){d(f)})};c.race=function(f){return new c(function(a,d){for(var e=t(f),k=e.next();!k.done;k=e.next())h(k.value).A(a,d)})};c.all=function(f){var a=t(f),d=a.next();return d.done?h([]):new c(function(e,k){function p(C){return function(D){n[C]=D;r--;r==0&&e(n)}}var n=[],r=0;do n.push(void 0),r++,h(d.value).A(p(n.length-1),k),d=a.next();while(!d.done)})};return c});
+function K(b,c){return Object.prototype.hasOwnProperty.call(b,c)}x("Object.is",function(b){return b?b:function(c,g){return c===g?c!==0||1/c===1/g:c!==c&&g!==g}});x("Array.prototype.includes",function(b){return b?b:function(c,g){var h=this;h instanceof String&&(h=String(h));var l=h.length;g=g||0;for(g<0&&(g=Math.max(g+l,0));g<l;g++){var m=h[g];if(m===c||Object.is(m,c))return!0}return!1}});
+x("String.prototype.includes",function(b){return b?b:function(c,g){if(this==null)throw new TypeError("The 'this' value for String.prototype.includes must not be null or undefined");if(c instanceof RegExp)throw new TypeError("First argument to String.prototype.includes must not be a regular expression");return this.indexOf(c,g||0)!==-1}});
+x("WeakMap",function(b){function c(d){this.g=(a+=Math.random()+1).toString();if(d){d=t(d);for(var e;!(e=d.next()).done;)e=e.value,this.set(e[0],e[1])}}function g(){}function h(d){var e=typeof d;return e==="object"&&d!==null||e==="function"}function l(d){if(!K(d,f)){var e=new g;u(d,f,{value:e})}}function m(d){var e=Object[d];e&&(Object[d]=function(k){if(k instanceof g)return k;Object.isExtensible(k)&&l(k);return e(k)})}if(function(){if(!b||!Object.seal)return!1;try{var d=Object.seal({}),e=Object.seal({}),
+k=new b([[d,2],[e,3]]);if(k.get(d)!=2||k.get(e)!=3)return!1;k.delete(d);k.set(e,4);return!k.has(d)&&k.get(e)==4}catch(p){return!1}}())return b;var f="$jscomp_hidden_"+Math.random();m("freeze");m("preventExtensions");m("seal");var a=0;c.prototype.set=function(d,e){if(!h(d))throw Error("Invalid WeakMap key");l(d);if(!K(d,f))throw Error("WeakMap key fail: "+d);d[f][this.g]=e;return this};c.prototype.get=function(d){return h(d)&&K(d,f)?d[f][this.g]:void 0};c.prototype.has=function(d){return h(d)&&K(d,
+f)&&K(d[f],this.g)};c.prototype.delete=function(d){return h(d)&&K(d,f)&&K(d[f],this.g)?delete d[f][this.g]:!1};return c});
+x("Map",function(b){function c(){var a={};return a.m=a.next=a.head=a}function g(a,d){var e=a[1];return J(function(){if(e){for(;e.head!=a[1];)e=e.m;for(;e.next!=e.head;)return e=e.next,{done:!1,value:d(e)};e=null}return{done:!0,value:void 0}})}function h(a,d){var e=d&&typeof d;e=="object"||e=="function"?m.has(d)?e=m.get(d):(e=""+ ++f,m.set(d,e)):e="p_"+d;var k=a[0][e];if(k&&K(a[0],e))for(a=0;a<k.length;a++){var p=k[a];if(d!==d&&p.key!==p.key||d===p.key)return{id:e,list:k,index:a,entry:p}}return{id:e,
+list:k,index:-1,entry:void 0}}function l(a){this[0]={};this[1]=c();this.size=0;if(a){a=t(a);for(var d;!(d=a.next()).done;)d=d.value,this.set(d[0],d[1])}}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var a=Object.seal({x:4}),d=new b(t([[a,"s"]]));if(d.get(a)!="s"||d.size!=1||d.get({x:4})||d.set({x:4},"t")!=d||d.size!=2)return!1;var e=d.entries(),k=e.next();if(k.done||k.value[0]!=a||k.value[1]!="s")return!1;k=e.next();return k.done||k.value[0].x!=
+4||k.value[1]!="t"||!e.next().done?!1:!0}catch(p){return!1}}())return b;var m=new WeakMap;l.prototype.set=function(a,d){a=a===0?0:a;var e=h(this,a);e.list||(e.list=this[0][e.id]=[]);e.entry?e.entry.value=d:(e.entry={next:this[1],m:this[1].m,head:this[1],key:a,value:d},e.list.push(e.entry),this[1].m.next=e.entry,this[1].m=e.entry,this.size++);return this};l.prototype.delete=function(a){a=h(this,a);return a.entry&&a.list?(a.list.splice(a.index,1),a.list.length||delete this[0][a.id],a.entry.m.next=a.entry.next,
+a.entry.next.m=a.entry.m,a.entry.head=null,this.size--,!0):!1};l.prototype.clear=function(){this[0]={};this[1]=this[1].m=c();this.size=0};l.prototype.has=function(a){return!!h(this,a).entry};l.prototype.get=function(a){return(a=h(this,a).entry)&&a.value};l.prototype.entries=function(){return g(this,function(a){return[a.key,a.value]})};l.prototype.keys=function(){return g(this,function(a){return a.key})};l.prototype.values=function(){return g(this,function(a){return a.value})};l.prototype.forEach=
+function(a,d){for(var e=this.entries(),k;!(k=e.next()).done;)k=k.value,a.call(d,k[1],k[0],this)};l.prototype[Symbol.iterator]=l.prototype.entries;var f=0;return l});
+x("Set",function(b){function c(g){this.g=new Map;if(g){g=t(g);for(var h;!(h=g.next()).done;)this.add(h.value)}this.size=this.g.size}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var g=Object.seal({x:4}),h=new b(t([g]));if(!h.has(g)||h.size!=1||h.add(g)!=h||h.size!=1||h.add({x:4})!=h||h.size!=2)return!1;var l=h.entries(),m=l.next();if(m.done||m.value[0]!=g||m.value[1]!=g)return!1;m=l.next();return m.done||m.value[0]==g||m.value[0].x!=4||
+m.value[1]!=m.value[0]?!1:l.next().done}catch(f){return!1}}())return b;c.prototype.add=function(g){g=g===0?0:g;this.g.set(g,g);this.size=this.g.size;return this};c.prototype.delete=function(g){g=this.g.delete(g);this.size=this.g.size;return g};c.prototype.clear=function(){this.g.clear();this.size=0};c.prototype.has=function(g){return this.g.has(g)};c.prototype.entries=function(){return this.g.entries()};c.prototype.values=function(){return this.g.values()};c.prototype.keys=c.prototype.values;c.prototype[Symbol.iterator]=
+c.prototype.values;c.prototype.forEach=function(g,h){var l=this;this.g.forEach(function(m){return g.call(h,m,m,l)})};return c});(function(){function b(){return m?Promise.resolve(m):f?f:f=fetch("https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json").then(function(a){if(!a.ok)throw Error("HTTP error! status: "+a.status+" fetching https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json");return a.json()}).then(function(a){if(!Array.isArray(a))throw new TypeError("Fetched icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json is not an array.");
+return m=a}).catch(function(a){console.error("IconChecker: Failed to load valid icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json.",a);f=null;throw a;})}function c(a){var d,e,k,p;return I(new H(new B(function(n){switch(n.h){case 1:d=(a.textContent||"").trim();if(!d||a.classList.contains("js-replaced-missing-icon")&&d==="radio_button_unchecked")return n.return();e=window.getComputedStyle(a);if(e.display==="none"||e.visibility==="hidden")return n.return();
+n.l=2;var r=b();n.h=4;return{value:r};case 4:k=n.u;n.h=3;n.l=0;break;case 2:return n.l=0,n.i=null,console.warn('IconChecker: Skipping check for icon "'+d+'" as valid names could not be loaded.'),n.return();case 3:(p=k.includes(d))?a.classList.contains("js-replaced-missing-icon")&&a.classList.remove("js-replaced-missing-icon"):d==="radio_button_unchecked"&&a.classList.contains("js-replaced-missing-icon")||(a.textContent="radio_button_unchecked",a.classList.add("js-replaced-missing-icon")),n.h=0}})))}
+function g(a){a=a===void 0?document.body:a;a.querySelectorAll(l).forEach(function(d){c(d)})}function h(){b().catch(function(){});document.fonts.ready.then(function(){requestAnimationFrame(function(){g(document.body);(new MutationObserver(function(a){var d=new Set;a=t(a);for(var e=a.next();!e.done;e=a.next())if(e=e.value,e.type==="childList")e.addedNodes.forEach(function(p){p.nodeType===Node.ELEMENT_NODE&&(p.matches(l)&&d.add(p),p.querySelectorAll(l).forEach(function(n){d.add(n)}))});else if(e.type===
+"attributes"&&e.attributeName==="class"){var k=e.target;e.target.nodeType===Node.ELEMENT_NODE&&k.matches(l)&&d.add(k)}else e.type==="characterData"&&e.target.parentNode&&(e=e.target.parentNode,e.nodeType===Node.ELEMENT_NODE&&e.matches(l)&&d.add(e));d.size>0&&setTimeout(function(){d.forEach(function(p){c(p)})},500)})).observe(document.body,{childList:!0,subtree:!0,attributes:!0,attributeFilter:["class"],characterData:!0})})}).catch(function(a){console.error("IconChecker: Font loading error. Scanning icons anyway.",
+a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons","material-symbols-outlined","material-symbols-rounded","material-symbols-sharp"].map(function(a){return"."+a}).join(","),m=null,f=null;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",function(){h()}):h()})();}).call(this);
+
+</script>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Divisor de Conta Justo</title>
+    <meta content="Calculadora inteligente para dividir contas de restaurante entre famílias, separando gastos com crianças e bebidas alcoólicas." name="description">
+    
+    <!-- External Resources -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+    
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f0f4f8; 
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Smooth fade-in animation */
+        .fade-in { 
+            animation: fadeIn 0.5s ease-out forwards; 
+            opacity: 0; 
+            transform: translateY(10px); 
+        }
+        @keyframes fadeIn { 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+
+        /* Custom scrollbar */
+        .custom-scroll::-webkit-scrollbar { width: 6px; }
+        .custom-scroll::-webkit-scrollbar-track { background: transparent; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        .custom-scroll::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        /* Print Optimization */
+        @media print {
+            body { background-color: white !important; color: black !important; }
+            .no-print { display: none !important; }
+            .print-only { display: block !important; }
+            .print-break-inside { page-break-inside: avoid; }
+            
+            /* Flatten colors for ink saving */
+            .bg-slate-800, .bg-white, .bg-slate-50, .bg-blue-50 { 
+                background-color: transparent !important; 
+                color: black !important; 
+                border: 1px solid #ddd !important; 
+            }
+            .text-white { color: black !important; }
+            .text-slate-300, .text-slate-400, .text-slate-500 { color: #444 !important; }
+            
+            /* Clean inputs */
+            input { border: none !important; background: transparent !important; padding: 0 !important; }
+            
+            /* Remove shadows/images */
+            .shadow-xl, .shadow-sm, .shadow-lg { box-shadow: none !important; }
+            img { display: none !important; }
+            
+            /* Layout flattening */
+            .grid-cols-12 { display: block; }
+            .lg\:col-span-7, .lg\:col-span-5 { width: 100%; margin-bottom: 20px; }
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.left-3{left:0.75rem}.top-1\/2{top:50%}.top-6{top:1.5rem}.z-10{z-index:10}.mx-auto{margin-left:auto;margin-right:auto}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.mb-1{margin-bottom:0.25rem}.mb-3{margin-bottom:0.75rem}.ml-1{margin-left:0.25rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-full{height:100%}.max-h-\[500px\]{max-height:500px}.w-full{width:100%}.w-5{width:1.25rem}.max-w-6xl{max-width:72rem}.flex-grow{flex-grow:1}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-blue-100{--tw-border-opacity:1;border-color:rgb(219 234 254 / var(--tw-border-opacity, 1))}.border-emerald-500\/30{border-color:rgb(16 185 129 / 0.3)}.border-emerald-900\/50{border-color:rgb(6 78 59 / 0.5)}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-600{--tw-border-opacity:1;border-color:rgb(71 85 105 / var(--tw-border-opacity, 1))}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-white\/20{border-color:rgb(255 255 255 / 0.2)}.border-purple-200{--tw-border-opacity:1;border-color:rgb(233 213 255 / var(--tw-border-opacity, 1))}.border-slate-600\/50{border-color:rgb(71 85 105 / 0.5)}.border-transparent{border-color:transparent}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-emerald-100{--tw-bg-opacity:1;background-color:rgb(209 250 229 / var(--tw-bg-opacity, 1))}.bg-emerald-500\/20{background-color:rgb(16 185 129 / 0.2)}.bg-emerald-900\/30{background-color:rgb(6 78 59 / 0.3)}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/10{background-color:rgb(255 255 255 / 0.1)}.bg-purple-50{--tw-bg-opacity:1;background-color:rgb(250 245 255 / var(--tw-bg-opacity, 1))}.bg-slate-700\/50{background-color:rgb(51 65 85 / 0.5)}.bg-transparent{background-color:transparent}.object-cover{object-fit:cover}.p-1{padding:0.25rem}.p-3{padding:0.75rem}.p-6{padding:1.5rem}.p-1\.5{padding:0.375rem}.p-4{padding:1rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-2{padding-bottom:0.5rem}.pb-20{padding-bottom:5rem}.pb-6{padding-bottom:1.5rem}.pl-10{padding-left:2.5rem}.pr-1{padding-right:0.25rem}.pr-4{padding-right:1rem}.pt-6{padding-top:1.5rem}.pt-1{padding-top:0.25rem}.text-center{text-align:center}.text-right{text-align:right}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[10px\]{font-size:10px}.text-\[18px\]{font-size:18px}.text-\[20px\]{font-size:20px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-0.025em}.tracking-wide{letter-spacing:0.025em}.tracking-wider{letter-spacing:0.05em}.text-blue-500{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-blue-800{--tw-text-opacity:1;color:rgb(30 64 175 / var(--tw-text-opacity, 1))}.text-emerald-100{--tw-text-opacity:1;color:rgb(209 250 229 / var(--tw-text-opacity, 1))}.text-emerald-300{--tw-text-opacity:1;color:rgb(110 231 183 / var(--tw-text-opacity, 1))}.text-emerald-600{--tw-text-opacity:1;color:rgb(5 150 105 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-purple-300{--tw-text-opacity:1;color:rgb(216 180 254 / var(--tw-text-opacity, 1))}.text-purple-400{--tw-text-opacity:1;color:rgb(192 132 252 / var(--tw-text-opacity, 1))}.text-purple-700{--tw-text-opacity:1;color:rgb(126 34 206 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.opacity-20{opacity:0.2}.opacity-50{opacity:0.5}.opacity-80{opacity:0.8}.opacity-90{opacity:0.9}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.outline-none{outline:2px solid transparent;outline-offset:2px}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:border-blue-300:hover{--tw-border-opacity:1;border-color:rgb(147 197 253 / var(--tw-border-opacity, 1))}.hover\:border-slate-300:hover{--tw-border-opacity:1;border-color:rgb(203 213 225 / var(--tw-border-opacity, 1))}.hover\:bg-blue-700:hover{--tw-bg-opacity:1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.hover\:bg-emerald-500\/30:hover{background-color:rgb(16 185 129 / 0.3)}.hover\:bg-white\/20:hover{background-color:rgb(255 255 255 / 0.2)}.hover\:bg-red-50:hover{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity, 1))}.hover\:bg-white:hover{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.hover\:text-red-500:hover{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.hover\:shadow-md:hover{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:border-transparent:focus{border-color:transparent}.focus\:border-blue-500:focus{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.focus\:border-purple-500:focus{--tw-border-opacity:1;border-color:rgb(168 85 247 / var(--tw-border-opacity, 1))}.focus\:bg-white:focus{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-1:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-blue-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(59 130 246 / var(--tw-ring-opacity, 1))}.focus\:ring-purple-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(168 85 247 / var(--tw-ring-opacity, 1))}.group:hover .group-hover\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 640px){.sm\:w-auto{width:auto}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}}@media (min-width: 768px){.md\:-mt-6{margin-top:-1.5rem}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:p-8{padding:2rem}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}}@media (min-width: 1024px){.lg\:col-span-5{grid-column:span 5 / span 5}.lg\:col-span-7{grid-column:span 7 / span 7}.lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}}</style></head>
+<body class="text-slate-800 pb-20">
+
+    <!-- Hero Section -->
+    <div class="relative bg-slate-900 text-white shadow-lg no-print">
+        <!-- Background Texture -->
+        <div class="absolute inset-0 overflow-hidden">
+            <img alt="Texture" class="w-full h-full object-cover opacity-20" src="data:image/svg+xml;base64,IDxzdmcgd2lkdGg9IjEwMjQiIGhlaWdodD0iMTAyNCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+IDxkZWZzPiA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSItMTAwJSIgeTE9IjAiIHgyPSIwIiB5Mj0iMCI+IDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzMzMyIvPiA8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjNDQ0Ii8+IDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzMzMyIvPiA8L2xpbmVhckdyYWRpZW50PiA8L2RlZnM+IDxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjMWUyOTNiIi8+IDwvc3ZnPg==">
+        </div>
+        
+        <div class="relative max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <h1 class="text-2xl md:text-3xl font-bold tracking-tight">Divisor de Conta Justo</h1>
+                <p class="text-slate-400 text-sm mt-1">Calcule o rateio perfeito separando crianças e bebidas.</p>
+            </div>
+            
+            <div class="flex gap-3">
+                <!-- Botão de Baixar Código -->
+                <button onclick="downloadApp()" class="bg-emerald-500/20 hover:bg-emerald-500/30 backdrop-blur border border-emerald-500/30 text-emerald-100 px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2 transition-all group">
+                    <span class="material-symbols-outlined text-[18px] group-hover:scale-110 transition-transform">download</span>
+                    Baixar App
+                </button>
+
+                <!-- Botão de Imprimir -->
+                <button onclick="window.print()" class="bg-white/10 hover:bg-white/20 backdrop-blur border border-white/20 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2 transition-all">
+                    <span class="material-symbols-outlined text-[18px]">print</span>
+                    Imprimir
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div class="max-w-6xl mx-auto px-4 mt-6 md:-mt-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- LEFT COLUMN: Inputs -->
+        <div class="lg:col-span-7 space-y-6">
+            
+            <!-- Panel 1: Families -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 fade-in" style="animation-delay: 0.1s;">
+                <div class="flex justify-between items-center mb-5 no-print">
+                    <h2 class="text-lg font-bold text-slate-700 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-blue-600 bg-blue-100 p-1 rounded-full text-[20px]">groups</span>
+                        Configuração da Mesa
+                    </h2>
+                    <button onclick="addFamily()" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg text-sm font-medium flex items-center gap-1 shadow-sm transition-colors">
+                        <span class="material-symbols-outlined text-[18px]">add</span> Adicionar
+                    </button>
+                </div>
+                
+                <h2 class="hidden print-only text-xl font-bold mb-4 border-b pb-2">Quem participou?</h2>
+                
+                <div id="families-container" class="space-y-3 max-h-[500px] overflow-y-auto custom-scroll pr-1">
+                    <!-- Javascript will insert families here -->
+                <div class="family-row bg-slate-50 hover:bg-white p-3 rounded-lg border border-slate-200 transition-all hover:shadow-md hover:border-blue-300 mb-3 print-break-inside group">
+            <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+                <!-- Name -->
+                <div class="flex-grow w-full sm:w-auto flex items-center gap-2">
+                    <span class="family-index text-xs font-bold text-slate-300 w-5">#1</span>
+                    <input type="text" class="family-name w-full bg-transparent border-b border-transparent hover:border-slate-300 focus:border-blue-500 focus:bg-white px-2 py-1 text-sm font-semibold text-slate-700 outline-none transition-colors" value="Família" placeholder="Nome">
+                </div>
+                <!-- Counters -->
+                <div class="grid grid-cols-3 gap-2 w-full sm:w-auto">
+                    <!-- Adults -->
+                    <div class="text-center">
+                        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Adultos</label>
+                        <input type="number" min="0" value="1" oninput="calculate()" class="family-adults w-full text-center bg-white border border-slate-200 rounded py-1 text-sm font-bold text-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none">
+                    </div>
+                    <!-- Kids -->
+                    <div class="text-center">
+                        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Kids</label>
+                        <input type="number" min="0" value="0" oninput="calculate()" class="family-kids w-full text-center bg-white border border-slate-200 rounded py-1 text-sm font-bold text-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none">
+                    </div>
+                    <!-- Alcohol -->
+                    <div class="text-center">
+                        <label class="block text-[10px] font-bold text-purple-400 uppercase mb-1">Álcool</label>
+                        <input type="number" min="0" value="0" oninput="calculate()" class="family-drinkers w-full text-center bg-purple-50 border border-purple-200 text-purple-700 rounded py-1 text-sm font-bold focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none">
+                    </div>
+                </div>
+                <!-- Delete -->
+                <button title="Remover" class="delete-btn text-slate-300 hover:text-red-500 hover:bg-red-50 p-1.5 rounded transition-colors no-print ml-1">
+                    <span class="material-symbols-outlined text-[20px]">delete</span>
+                </button>
+            </div>
+        </div><div class="family-row bg-slate-50 hover:bg-white p-3 rounded-lg border border-slate-200 transition-all hover:shadow-md hover:border-blue-300 mb-3 print-break-inside group">
+            <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+                <!-- Name -->
+                <div class="flex-grow w-full sm:w-auto flex items-center gap-2">
+                    <span class="family-index text-xs font-bold text-slate-300 w-5">#2</span>
+                    <input type="text" class="family-name w-full bg-transparent border-b border-transparent hover:border-slate-300 focus:border-blue-500 focus:bg-white px-2 py-1 text-sm font-semibold text-slate-700 outline-none transition-colors" value="Família" placeholder="Nome">
+                </div>
+                <!-- Counters -->
+                <div class="grid grid-cols-3 gap-2 w-full sm:w-auto">
+                    <!-- Adults -->
+                    <div class="text-center">
+                        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Adultos</label>
+                        <input type="number" min="0" value="1" oninput="calculate()" class="family-adults w-full text-center bg-white border border-slate-200 rounded py-1 text-sm font-bold text-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none">
+                    </div>
+                    <!-- Kids -->
+                    <div class="text-center">
+                        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Kids</label>
+                        <input type="number" min="0" value="0" oninput="calculate()" class="family-kids w-full text-center bg-white border border-slate-200 rounded py-1 text-sm font-bold text-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none">
+                    </div>
+                    <!-- Alcohol -->
+                    <div class="text-center">
+                        <label class="block text-[10px] font-bold text-purple-400 uppercase mb-1">Álcool</label>
+                        <input type="number" min="0" value="0" oninput="calculate()" class="family-drinkers w-full text-center bg-purple-50 border border-purple-200 text-purple-700 rounded py-1 text-sm font-bold focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none">
+                    </div>
+                </div>
+                <!-- Delete -->
+                <button title="Remover" class="delete-btn text-slate-300 hover:text-red-500 hover:bg-red-50 p-1.5 rounded transition-colors no-print ml-1">
+                    <span class="material-symbols-outlined text-[20px]">delete</span>
+                </button>
+            </div>
+        </div></div>
+            </div>
+
+            <!-- Panel 2: Bill Details -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 fade-in" style="animation-delay: 0.2s;">
+                <h2 class="text-lg font-bold text-slate-700 flex items-center gap-2 mb-5">
+                    <span class="material-symbols-outlined text-emerald-600 bg-emerald-100 p-1 rounded-full text-[20px]">receipt_long</span>
+                    Dados da Conta
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <!-- Subtotal -->
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold text-slate-500 uppercase tracking-wide">Total da Conta (Sem Gorjeta)</label>
+                        <div class="relative">
+                            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-bold">R$</span>
+                            <input id="billSubtotal" type="number" placeholder="0.00" oninput="calculate()" class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none font-semibold text-lg text-slate-800 transition-all">
+                        </div>
+                    </div>
+
+                    <!-- Tip -->
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold text-slate-500 uppercase tracking-wide">Taxa de Serviço (%)</label>
+                        <div class="relative">
+                            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-bold">%</span>
+                            <input id="billTip" type="number" value="10" oninput="calculate()" class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none font-semibold text-lg text-slate-800 transition-all">
+                        </div>
+                    </div>
+
+                    <!-- Kids Cost -->
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold text-slate-500 uppercase tracking-wide">Gasto Total Kids</label>
+                        <div class="relative">
+                            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-bold">R$</span>
+                            <input id="billKids" type="number" placeholder="0.00" oninput="calculate()" class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
+                        </div>
+                        <p class="text-[10px] text-slate-400">Soma de todos os pratos infantis</p>
+                    </div>
+
+                    <!-- Alcohol Cost -->
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold text-slate-500 uppercase tracking-wide">Gasto Total Álcool</label>
+                        <div class="relative">
+                            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-bold">R$</span>
+                            <input id="billAlcohol" type="number" placeholder="0.00" oninput="calculate()" class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
+                        </div>
+                        <p class="text-[10px] text-slate-400">Soma de todas as bebidas alcoólicas</p>
+                    </div>
+                </div>
+
+                <!-- Explanation -->
+                <div class="mt-6 bg-blue-50 border border-blue-100 rounded-lg p-3 flex gap-3 items-start no-print">
+                    <span class="material-symbols-outlined text-blue-500 mt-0.5">info</span>
+                    <div class="text-xs text-blue-800 leading-relaxed">
+                        <strong>Lógica do Cálculo:</strong><br>
+                        O sistema subtrai os gastos de Kids e Álcool do total. O valor restante (<span id="calc-adult-food" class="font-bold">R$&nbsp;0,00</span>) é considerado "Comida Comum" e dividido igualmente entre todos os adultos.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Results -->
+        <div class="lg:col-span-5 space-y-6">
+            <div class="bg-slate-800 text-white rounded-xl shadow-xl p-6 md:p-8 sticky top-6 fade-in print-break-inside" style="animation-delay: 0.3s;">
+                <h2 class="text-xl font-bold mb-6 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-yellow-400">payments</span>
+                    Resultado do Rateio
+                </h2>
+
+                <!-- Totals -->
+                <div class="border-b border-slate-600 pb-6 mb-6">
+                    <div class="flex justify-between items-baseline">
+                        <span class="text-slate-400 text-sm font-medium uppercase tracking-wider">Total Final</span>
+                        <span id="total-final-display" class="text-4xl font-bold tracking-tight">R$&nbsp;0,00</span>
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-slate-500 text-xs">Inclui conta + serviço</span>
+                        <span class="text-xs font-medium text-emerald-300 bg-emerald-900/30 px-2 py-1 rounded border border-emerald-900/50">
+                            Total Gorjeta: <span id="total-tip-display">R$&nbsp;0,00</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Results List -->
+                <div id="results-container" class="space-y-4"><div class="bg-slate-700/50 rounded-lg p-4 border border-slate-600 print-break-inside">
+                    <div class="flex justify-between items-start mb-3 border-b border-slate-600/50 pb-2">
+                        <div>
+                            <h3 class="font-bold text-lg text-white leading-tight">Família Silva</h3>
+                            <div class="text-[10px] text-slate-300 uppercase tracking-wide mt-1 opacity-80">
+                                2 Adultos • 1 Kids • 1 Bebem
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="block text-2xl font-bold text-white">R$&nbsp;0,00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-1 text-xs sm:text-sm">
+                        <div class="flex justify-between text-slate-300">
+                            <span>Comida (2)</span>
+                            <span class="font-mono opacity-90">R$&nbsp;0,00</span>
+                        </div>
+                        
+                        <div class="flex justify-between text-slate-300">
+                            <span>Kids (1)</span>
+                            <span class="font-mono opacity-90">R$&nbsp;0,00</span>
+                        </div>
+                        
+                        <div class="flex justify-between text-purple-300">
+                            <span>Bebidas (1)</span>
+                            <span class="font-mono opacity-90">R$&nbsp;0,00</span>
+                        </div>
+                        <div class="flex justify-between text-emerald-400 font-medium pt-1 mt-1 border-t border-slate-600/50">
+                            <span>Gorjeta (10%)</span>
+                            <span class="font-mono">+ R$&nbsp;0,00</span>
+                        </div>
+                    </div>
+                </div><div class="bg-slate-700/50 rounded-lg p-4 border border-slate-600 print-break-inside">
+                    <div class="flex justify-between items-start mb-3 border-b border-slate-600/50 pb-2">
+                        <div>
+                            <h3 class="font-bold text-lg text-white leading-tight">Família Souza</h3>
+                            <div class="text-[10px] text-slate-300 uppercase tracking-wide mt-1 opacity-80">
+                                2 Adultos • 2 Kids • 1 Bebem
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="block text-2xl font-bold text-white">R$&nbsp;0,00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-1 text-xs sm:text-sm">
+                        <div class="flex justify-between text-slate-300">
+                            <span>Comida (2)</span>
+                            <span class="font-mono opacity-90">R$&nbsp;0,00</span>
+                        </div>
+                        
+                        <div class="flex justify-between text-slate-300">
+                            <span>Kids (2)</span>
+                            <span class="font-mono opacity-90">R$&nbsp;0,00</span>
+                        </div>
+                        
+                        <div class="flex justify-between text-purple-300">
+                            <span>Bebidas (1)</span>
+                            <span class="font-mono opacity-90">R$&nbsp;0,00</span>
+                        </div>
+                        <div class="flex justify-between text-emerald-400 font-medium pt-1 mt-1 border-t border-slate-600/50">
+                            <span>Gorjeta (10%)</span>
+                            <span class="font-mono">+ R$&nbsp;0,00</span>
+                        </div>
+                    </div>
+                </div></div>
+                
+                <!-- Errors -->
+                <div id="error-container" class="mt-4"></div>
+
+                <!-- Footer Print -->
+                <div class="mt-8 pt-6 border-t border-slate-700 text-center text-[10px] text-slate-500 hidden print-only">
+                    Relatório gerado em <span id="print-date">04/01/2026</span> pelo Divisor de Conta Justo.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TEMPLATE -->
+    <template id="family-input-template">
+        <div class="family-row bg-slate-50 hover:bg-white p-3 rounded-lg border border-slate-200 transition-all hover:shadow-md hover:border-blue-300 mb-3 print-break-inside group">
+            <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+                <!-- Name -->
+                <div class="flex-grow w-full sm:w-auto flex items-center gap-2">
+                    <span class="family-index text-xs font-bold text-slate-300 w-5">#1</span>
+                    <input type="text" class="family-name w-full bg-transparent border-b border-transparent hover:border-slate-300 focus:border-blue-500 focus:bg-white px-2 py-1 text-sm font-semibold text-slate-700 outline-none transition-colors" value="Família" placeholder="Nome">
+                </div>
+                <!-- Counters -->
+                <div class="grid grid-cols-3 gap-2 w-full sm:w-auto">
+                    <!-- Adults -->
+                    <div class="text-center">
+                        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Adultos</label>
+                        <input type="number" min="0" value="1" oninput="calculate()" class="family-adults w-full text-center bg-white border border-slate-200 rounded py-1 text-sm font-bold text-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none">
+                    </div>
+                    <!-- Kids -->
+                    <div class="text-center">
+                        <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Kids</label>
+                        <input type="number" min="0" value="0" oninput="calculate()" class="family-kids w-full text-center bg-white border border-slate-200 rounded py-1 text-sm font-bold text-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none">
+                    </div>
+                    <!-- Alcohol -->
+                    <div class="text-center">
+                        <label class="block text-[10px] font-bold text-purple-400 uppercase mb-1">Álcool</label>
+                        <input type="number" min="0" value="0" oninput="calculate()" class="family-drinkers w-full text-center bg-purple-50 border border-purple-200 text-purple-700 rounded py-1 text-sm font-bold focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none">
+                    </div>
+                </div>
+                <!-- Delete -->
+                <button title="Remover" class="delete-btn text-slate-300 hover:text-red-500 hover:bg-red-50 p-1.5 rounded transition-colors no-print ml-1">
+                    <span class="material-symbols-outlined text-[20px]">delete</span>
+                </button>
+            </div>
+        </div>
+    </template>
+
+    <script>
+        // --- App Logic ---
+        let nextId = 1;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('print-date').textContent = new Date().toLocaleDateString();
+            
+            // Add initial data
+            addFamily('Família Silva', 2, 1, 1);
+            addFamily('Família Souza', 2, 2, 1);
+            
+            calculate();
+        });
+
+        // Function to Download the HTML file
+        function downloadApp() {
+            // Get the current HTML
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            
+            // Create temporary link and click it
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'divisor-conta-justo.html';
+            document.body.appendChild(a);
+            a.click();
+            
+            // Cleanup
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function addFamily(name = '', adults = 2, kids = 0, drinkers = 0) {
+            const container = document.getElementById('families-container');
+            const template = document.getElementById('family-input-template');
+            const clone = template.content.cloneNode(true);
+            const row = clone.querySelector('.family-row');
+
+            row.querySelector('.family-index').textContent = '#' + nextId;
+            const nameInput = row.querySelector('.family-name');
+            nameInput.value = name || `Família ${nextId}`;
+            row.querySelector('.family-adults').value = adults;
+            row.querySelector('.family-kids').value = kids;
+            row.querySelector('.family-drinkers').value = drinkers;
+
+            row.querySelectorAll('input').forEach(input => input.addEventListener('input', calculate));
+            
+            row.querySelector('.delete-btn').onclick = () => {
+                if(document.querySelectorAll('.family-row').length > 1) {
+                    row.remove();
+                    calculate();
+                } else {
+                    row.classList.add('animate-pulse');
+                    setTimeout(() => row.classList.remove('animate-pulse'), 500);
+                }
+            };
+
+            container.appendChild(row);
+            container.scrollTop = container.scrollHeight;
+            nextId++;
+            calculate();
+        }
+
+        function formatCurrency(val) {
+            return val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        function calculate() {
+            // 1. Gather Data
+            const families = Array.from(document.querySelectorAll('.family-row')).map(row => ({
+                name: row.querySelector('.family-name').value || 'Sem Nome',
+                adults: Math.max(0, parseInt(row.querySelector('.family-adults').value) || 0),
+                kids: Math.max(0, parseInt(row.querySelector('.family-kids').value) || 0),
+                drinkers: Math.max(0, parseInt(row.querySelector('.family-drinkers').value) || 0)
+            }));
+
+            const subtotal = Math.abs(parseFloat(document.getElementById('billSubtotal').value) || 0);
+            const tipPercent = Math.abs(parseFloat(document.getElementById('billTip').value) || 0);
+            const totalKidsCost = Math.abs(parseFloat(document.getElementById('billKids').value) || 0);
+            const totalAlcoholCost = Math.abs(parseFloat(document.getElementById('billAlcohol').value) || 0);
+
+            // 2. Counts
+            const totalAdults = families.reduce((acc, f) => acc + f.adults, 0);
+            const totalKids = families.reduce((acc, f) => acc + f.kids, 0);
+            const totalDrinkers = families.reduce((acc, f) => acc + f.drinkers, 0);
+
+            // 3. Derived Costs
+            const totalAdultFoodCost = Math.max(0, subtotal - totalKidsCost - totalAlcoholCost);
+            document.getElementById('calc-adult-food').textContent = formatCurrency(totalAdultFoodCost);
+
+            // 4. Per Unit
+            const costPerAdult = totalAdults > 0 ? (totalAdultFoodCost / totalAdults) : 0;
+            const costPerKid = totalKids > 0 ? (totalKidsCost / totalKids) : 0;
+            const costPerDrinker = totalDrinkers > 0 ? (totalAlcoholCost / totalDrinkers) : 0;
+
+            // 5. Results
+            let grandTotal = 0;
+            let grandTip = 0;
+            const resultsContainer = document.getElementById('results-container');
+            const errorContainer = document.getElementById('error-container');
+            
+            resultsContainer.innerHTML = '';
+            errorContainer.innerHTML = '';
+
+            if (totalAdultFoodCost > 0 && totalAdults === 0) {
+                errorContainer.innerHTML = `
+                    <div class="bg-red-500/20 border border-red-500/50 text-red-200 text-xs p-3 rounded flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm">warning</span>
+                        Atenção: Há R$ ${totalAdultFoodCost.toFixed(2)} de comida de adulto, mas 0 adultos cadastrados.
+                    </div>
+                `;
+            }
+
+            families.forEach(f => {
+                const fCostAdultFood = f.adults * costPerAdult;
+                const fCostKids = f.kids * costPerKid;
+                const fCostAlcohol = f.drinkers * costPerDrinker;
+                
+                const fSubtotal = fCostAdultFood + fCostKids + fCostAlcohol;
+                const fTip = fSubtotal * (tipPercent / 100);
+                const fTotal = fSubtotal + fTip;
+
+                grandTotal += fTotal;
+                grandTip += fTip;
+
+                const card = document.createElement('div');
+                card.className = 'bg-slate-700/50 rounded-lg p-4 border border-slate-600 print-break-inside';
+                
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-3 border-b border-slate-600/50 pb-2">
+                        <div>
+                            <h3 class="font-bold text-lg text-white leading-tight">${f.name}</h3>
+                            <div class="text-[10px] text-slate-300 uppercase tracking-wide mt-1 opacity-80">
+                                ${f.adults} Adultos • ${f.kids} Kids • ${f.drinkers} Bebem
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="block text-2xl font-bold text-white">${formatCurrency(fTotal)}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-1 text-xs sm:text-sm">
+                        <div class="flex justify-between text-slate-300">
+                            <span>Comida (${f.adults})</span>
+                            <span class="font-mono opacity-90">${formatCurrency(fCostAdultFood)}</span>
+                        </div>
+                        ${f.kids > 0 ? `
+                        <div class="flex justify-between text-slate-300">
+                            <span>Kids (${f.kids})</span>
+                            <span class="font-mono opacity-90">${formatCurrency(fCostKids)}</span>
+                        </div>` : ''}
+                        ${f.drinkers > 0 ? `
+                        <div class="flex justify-between text-purple-300">
+                            <span>Bebidas (${f.drinkers})</span>
+                            <span class="font-mono opacity-90">${formatCurrency(fCostAlcohol)}</span>
+                        </div>` : ''}
+                        <div class="flex justify-between text-emerald-400 font-medium pt-1 mt-1 border-t border-slate-600/50">
+                            <span>Gorjeta (${tipPercent}%)</span>
+                            <span class="font-mono">+ ${formatCurrency(fTip)}</span>
+                        </div>
+                    </div>
+                `;
+                resultsContainer.appendChild(card);
+            });
+
+            document.getElementById('total-final-display').textContent = formatCurrency(grandTotal);
+            document.getElementById('total-tip-display').textContent = formatCurrency(grandTip);
+        }
+    </script>
+
+</body></html>
